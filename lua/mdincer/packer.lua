@@ -6,14 +6,6 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
-  -- Theme
-  use ({
-	  'rose-pine/neovim',
-	  as = 'rose-pine',
-	  config = function()
-		  vim.cmd('colorscheme rose-pine')
-	 end
-  })
   -- Telescope
   use {
   'nvim-telescope/telescope.nvim', tag = '0.1.8',
@@ -31,8 +23,10 @@ return require('packer').startup(function(use)
   }
   use('mbbill/undotree')
   use('tpope/vim-fugitive')
-  use('VonHeikemen/lsp-zero.nvim', { branch = 'v4.x' })
-  use('neovim/nvim-lspconfig')
-  use('hrsh7th/cmp-nvim-lsp')
-  use('hrsh7th/nvim-cmp')
+  use 'neovim/nvim-lspconfig' -- LSP configurations for Neovim 
+  use 'williamboman/mason.nvim' -- Optional, if you're using Mason for managing LSP servers 
+  use 'williamboman/mason-lspconfig.nvim' -- Optional, if you're using Mason for managing LSP servers 
+  use 'VonHeikemen/lsp-zero.nvim' -- LSP Zero plugin 
+  use 'hrsh7th/nvim-cmp' -- Autocompletion plugin 
+  use 'hrsh7th/cmp-nvim-lsp'
 end)

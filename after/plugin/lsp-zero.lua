@@ -34,6 +34,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
+
 require('mason').setup({})
 require('mason-lspconfig').setup({
   -- Replace the language servers listed here
